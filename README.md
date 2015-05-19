@@ -1,6 +1,6 @@
 # Podcast Ninja
 
-[![Circle CI](https://circleci.com/gh/monty5811/podcastninja.svg?style=svg)](https://circleci.com/gh/monty5811/podcastninja)[![codecov.io](http://codecov.io/github/monty5811/podcastninja/coverage.svg?branch=master)](http://codecov.io/github/monty5811/podcastninja?branch=master)[![Code Health](https://landscape.io/github/monty5811/podcastninja/master/landscape.svg?style=flat)](https://landscape.io/github/monty5811/podcastninja/master)
+[![Circle CI](https://circleci.com/gh/monty5811/podcastninja.svg?style=svg)](https://circleci.com/gh/monty5811/podcastninja)[![codecov.io](http://codecov.io/github/monty5811/podcastninja/coverage.svg?branch=master)](http://codecov.io/github/monty5811/podcastninja?branch=master)
 
 Django app to serve up personal RSS feeds.
 
