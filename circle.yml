@@ -9,6 +9,9 @@ dependencies:
 test:
   override:
     - py.test podcastninja --nomigrations -n 2 --cov="podcastninja/" --cov-report="html" --junitxml="$CIRCLE_TEST_REPORTS/junit.xml"
+  post:
+    - sudo pip install codecov
+    - codecov --token="1359df7e-f96b-4a25-9e3f-a67dc067ec57"
 general:
   artifacts:
     - "coverage_html_report"
