@@ -1,0 +1,50 @@
+{% extends 'podcastninja/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center blue-text">Podcast Ninja</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Your own personal podcast feed</h5>
+      </div>
+      <div class="row center">
+        <a href="{% url 'account_signup' %}" id="download-button" class="btn-large waves-effect waves-light blue darken-4">Get Started</a>
+      </div>
+      <br>
+    </div>
+</div>
+<div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center blue-text">Simple and Easy</h5>
+
+            <p class="light">Once you have subscribed to your personal feed:<ol>
+            <li>Find an audio file.</li>
+            <li>Copy the link.</li>
+            <li>Add it to Podcast Ninja.</li>
+            <li>Enjoy listening in your favourite podcast app.</li>
+            </ol></p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center blue-text">Browser Extensions</h5>
+
+            <p class="light">Coming Soon! You will be able to add audio from any web page using a Chrome or Firefox extension.</p>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h5 class="center blue-text">YouTube Support</h5>
+
+            <p class="light">Experimental YouTube support - just add a link to any YouTube video and the audio track will be extracted and added to your feed.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+{%endblock%}

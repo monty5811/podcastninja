@@ -1,0 +1,86 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include 'podcastninja/head.html' %}
+<style>
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+.red-txt {
+  color: #f44336;
+}
+</style>
+</head>
+<body>
+  {% include 'podcastninja/nav.html' %}
+  <main>
+  <div class="row">
+    {%block content %}
+    {%endblock%}
+  </div>
+  </main>
+  <footer class="page-footer blue">
+    <div class="container">
+    <div class="row">
+      <div class="col l5 offset-l1 s12">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="https://pdcst.ninja" data-text="Get your personal podcast feed with Podcast Ninja">Tweet</a>
+        <a class="github-button" href="https://github.com/monty5811/podcastninja" data-count-href="/monty5811/podcastninja/stargazers" data-count-api="/repos/monty5811/podcastninja#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star monty5811/podcastninja on GitHub">Star</a>
+      </div>
+      <div class="col l3 offset-l3 s12">
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="{% url 'feedback' %}">Feedback</a></li>
+          <li><a class="grey-text text-lighten-3" href="{% url 'help' %}">Help</a></li>
+          <li><a class="grey-text text-lighten-3" href="{% url 'about' %}">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2015
+      <a class="grey-text text-lighten-4 right" href="#!"></a>
+    </div>
+  </div>
+</footer>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>(function($){
+  $(function(){
+    $('.button-collapse').sideNav();
+  }); // end of document ready
+})(jQuery); // end of jQuery name space
+</script>
+<script src="https://fb.me/react-0.13.1.js"></script>
+<script type="text/javascript" src="{% static 'js/materialize.min.js' %}"></script>
+<script src="{% static 'js/main.js'%}"></script>
+{% if messages|length > 0 %}
+<script>
+    $(document).ready(function() {
+        {% for message in messages %}
+         Materialize.toast('{{message}}', 4000)
+        {% endfor %}
+        });
+</script>
+{% endif %}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-53156632-3', 'auto');
+  ga('send', 'pageview');
+</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<!-- Place this tag right after the last button or just before your close body tag. -->
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+{% block morejs %}
+{% endblock %}
+</body>
+</html>

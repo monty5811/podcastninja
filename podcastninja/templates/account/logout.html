@@ -1,0 +1,15 @@
+{% extends "podcastninja/base.html" %}
+{% load i18n %}
+{% block content %}
+<div class="col s8 offset-s2 m4 offset-m4">
+    <h3>{% trans "Sign Out" %}</h3>
+    <p>{% trans 'Are you sure you want to sign out?' %}</p>
+    <form method="post" action="{% url 'account_logout' %}">
+      {% csrf_token %}
+      {% if redirect_field_value %}
+      <input type="hidden" name="{{redirect_field_name}}" value="{{redirect_field_value}}"/>
+      {% endif %}
+      <button class="blue waves-effect waves-light btn" type="submit">{% trans 'Sign Out' %}</button>
+    </form>
+</div>
+{% endblock %}
