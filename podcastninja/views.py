@@ -101,7 +101,7 @@ class FeedbackView(FormView):
     success_url = '/'
 
     def form_valid(self, form):
-        form.send_email("pdcst.ninja@gmailcom")
+        form.send_email("pdcst.ninja@gmail.com")
         messages.add_message(self.request, messages.INFO, 'Thanks for your feedback!')
         return super(FeedbackView, self).form_valid(form)
 
